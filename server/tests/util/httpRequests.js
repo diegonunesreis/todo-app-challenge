@@ -1,6 +1,6 @@
 const request = require('supertest')
 
-const app = require('../../server.js')
+const app = require('../../src/server')
 
 // a helper function to make a POST request.
 function post (url, body) {

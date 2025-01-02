@@ -4,7 +4,7 @@ class GetAllTodosUseCase {
   }
 
   async execute () {
-    return await this.todoRepository.GetAllTodosUseCase()
+    return await this.todoRepository.all()
   }
 }
 

@@ -91,11 +91,4 @@ class TodoController {
   }
 }
 
-module.exports = new TodoController(
-  new CreateTodoUseCase(),
-  new GetTodoUseCase(),
-  new GetAllTodosUseCase(),
-  new UpdateTodoUseCase(),
-  new DeleteTodoUseCase(),
-  new DeleteAllTodosUseCase()
-)
+module.exports = TodoController

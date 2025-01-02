@@ -4,6 +4,10 @@ class UpdateTodoUseCase {
   }
 
   async execute (id, properties) {
+    if (!id) {
+      throw new Error('id is required')
+    }
+    id = Number(id)
     return await this.todoRepository.update(id, properties)
   }
 }

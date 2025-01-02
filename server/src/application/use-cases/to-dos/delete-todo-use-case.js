@@ -4,6 +4,11 @@ class DeleteTodoUseCase {
   }
 
   async execute (id) {
+    if (!id) {
+      throw new Error('id is required')
+    }
+    id = Number(id)
+
     return await this.todoRepository.del(id)
   }
 }

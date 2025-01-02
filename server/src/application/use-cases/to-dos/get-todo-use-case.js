@@ -8,6 +8,8 @@ class GetTodoUseCase {
       throw new Error('id is required')
     }
 
+    id = Number(id)
+
     return await this.todoRepository.get(id)
   }
 }

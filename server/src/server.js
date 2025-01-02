@@ -3,7 +3,7 @@ const todoRoutes = require('./presentation/routes/todo-routes')
 
 const port = process.env.PORT || 5001
 
-app.use('/todos', todoRoutes)
+app.use('/', todoRoutes)
 
 if (process.env.NODE_ENV !== 'test') {
   app.listen(port, () => console.log(`Listening on port ${port}`))

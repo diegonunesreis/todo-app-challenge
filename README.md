@@ -39,11 +39,11 @@ Bonus features include a simple frontend boostrapped with create-react-app and t
 
     `cd server/src/infrastructure/database && knex migrate:latest`
 
-7. Start the server on [http://localhost:5001](http://localhost:5001).
+7. Start the server on [http://localhost:5000](http://localhost:5000).
 
     `yarn server`
 
-8. Test it against the spec at [Todo-Backend Specs](http://todobackend.com/specs/index.html?http://localhost:5001/)
+8. Test it against the spec at [Todo-Backend Specs](http://todobackend.com/specs/index.html?http://localhost:5000/)
 
 ## Bonus Features
 

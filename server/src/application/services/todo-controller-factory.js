@@ -1,9 +1,12 @@
-const CreateTodoUseCase = require('../../application/use-cases/to-dos/create-todo-use-case')
-const GetTodoUseCase = require('../../application/use-cases/to-dos/get-todo-use-case')
-const GetAllTodosUseCase = require('../../application/use-cases/to-dos/get-all-todos-use-case')
-const UpdateTodoUseCase = require('../../application/use-cases/to-dos/update-todo-use-case')
-const DeleteTodoUseCase = require('../../application/use-cases/to-dos/delete-todo-use-case')
-const DeleteAllTodosUseCase = require('../../application/use-cases/to-dos/delete-all-todos-use-case')
+// 	•	Se main/factories existe apenas para instanciar casos de uso ou controladores, considere movê-lo para application/services, 
+// que pode servir como um ponto de entrada para inicialização.
+
+const CreateTodoUseCase = require('../use-cases/to-dos/create-todo-use-case')
+const GetTodoUseCase = require('../use-cases/to-dos/get-todo-use-case')
+const GetAllTodosUseCase = require('../use-cases/to-dos/get-all-todos-use-case')
+const UpdateTodoUseCase = require('../use-cases/to-dos/update-todo-use-case')
+const DeleteTodoUseCase = require('../use-cases/to-dos/delete-todo-use-case')
+const DeleteAllTodosUseCase = require('../use-cases/to-dos/delete-all-todos-use-case')
 
 const TodoRepositoryImpl = require('../../infrastructure/database/repositories/todo-repository-impl')
 const TodoController = require('../../presentation/controllers/todo-controller')

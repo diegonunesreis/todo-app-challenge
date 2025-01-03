@@ -41,7 +41,7 @@ class App extends Component {
     // We can only proxy non-root gets.
     let response;
     if (process.env.NODE_ENV === "development" && method === "GET" && id === '') {
-      response = await fetch('http://localhost:5001/', request);
+      response = await fetch('http://localhost:5000/', request);
     } else {
       response = await fetch(`/${id}`, request);
     }

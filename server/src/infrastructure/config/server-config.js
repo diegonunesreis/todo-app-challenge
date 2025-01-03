@@ -1,3 +1,5 @@
+// 	•	O server-config.js é um ótimo candidato para infrastructure/config, já que está relacionado à configuração do sistema.
+
 require('dotenv').config()
 const express = require('express')
 // const https = require('https')

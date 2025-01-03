@@ -1,5 +1,5 @@
 const express = require('express')
-const createTodoControllerFactory = require('../../main/factories/todo-controller-factory')
+const createTodoControllerFactory = require('../../application/services/todo-controller-factory')
 
 const router = express.Router()
 const todoController = createTodoControllerFactory()

@@ -1,7 +1,7 @@
-const app = require('./shared/config/server-config.js')
+const app = require('./infrastructure/config/server-config')
 const todoRoutes = require('./presentation/routes/todo-routes')
 
-const port = process.env.PORT || 5001
+const port = process.env.PORT || 5000
 
 app.use('/', todoRoutes)
 

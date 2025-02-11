@@ -16,11 +16,11 @@ class App extends Component {
 
     response: [],
   };
-  
+
   handleSubmit = async e => {
     e.preventDefault();
     let { method, id, title, order, completed } = this.state;
-    
+
     let request = {
       method,
       headers: {
@@ -35,15 +35,15 @@ class App extends Component {
     if (method !== "GET")
       request.body = JSON.stringify({ title, order, completed })
 
-    this.setState({ lastRequest: `${method} at /${id}`});
+    this.setState({ lastRequest: `${method} at /${id}` });
     // Code smells, but the setup of todo-backend with get('/') returning a list of todos requires
     // that we directly hit localhost instead of being able to rely on the proxy.
     // We can only proxy non-root gets.
     let response;
     if (process.env.NODE_ENV === "development" && method === "GET" && id === '') {
-      response = await fetch('http://localhost:5001/', request);
+      response = await fetch('http://localhost:5000/', request);
     } else {
-      response = await fetch(`http://localhost:5001/${id}`, request);
+      response = await fetch(`/${id}`, request);
     }
 
     const contentType = response.headers.get('content-type');
@@ -64,14 +64,14 @@ class App extends Component {
     // Ensures formart of [{}, {}, {}]
     if (!Array.isArray(body))
       body = Array(body);
-  
+
     this.setState({ response: body });
   };
 
   changeMethod = event => {
     this.setState({ method: event.target.value });
   };
-  
+
   render() {
     const { method, lastRequest, id, title, order, completed, response } = this.state;
 
@@ -90,9 +90,9 @@ class App extends Component {
         </header>
 
         <form onSubmit={this.handleSubmit}>
-          <p>
-            <h3>Send to Server:</h3>
-          </p>
+
+          <h3>Send to Server:</h3>
+
           <select value={method} onChange={this.changeMethod}>
             <option value="GET">Get</option>
             <option value="POST">Post</option>
@@ -140,7 +140,7 @@ class App extends Component {
             response.map((todo, i) => {
               return (
                 <li key={i}>
-                  { 
+                  {
                     todo ? Object.entries(todo).map(([key, value]) => {
                       return `${key}: ${value}   `
                     }) : undefined
